@@ -1,0 +1,16 @@
+body {
+  /* font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, Verdana, Meiryo, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+/* タブレット用CSSをメディアクエリ内に記述する */
+@media screen and (min-width: 481px) {
+
+}
+/* PC用CSSをメディアクエリ内に記述する */
+@media screen and (min-width: 960px) {
+
+}

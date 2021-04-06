@@ -7,6 +7,8 @@
     "build": "gridsome build"
   },
   "dependencies": {
-    "gridsome": "^0.7.0"
+    "buefy": "^0.9.5",
+    "gridsome": "^0.7.0",
+    "vue-scrollto": "^2.20.0"
   }
 }
