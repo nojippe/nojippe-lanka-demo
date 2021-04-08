@@ -6,14 +6,6 @@
   </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
-
 <script>
 import ComHeader from "@/components/ComHeader"
 import ComFooter from "@/components/ComFooter"

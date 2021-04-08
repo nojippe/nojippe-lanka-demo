@@ -1,12 +1,21 @@
 <template>
   <header class="header">
     <strong>
-      <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+      <g-link :to="$tp('/')">{{ $static.metadata.siteName }}</g-link>
     </strong>
+    <nav class="nav">
+      <a v-for="locale in availableLocales"
+        :key="locale"
+        href="#!"
+        class="nav__link"
+        @click.prevent="changeLocale(locale)">
+        {{ locale.substr(0, 2) }}
+      </a>
+    </nav>
     <nav class="nav">
       <a href="#!"
         v-scroll-to="{ el: '#company', duration: 400 }"
-        class="nav__link" >Company</a>
+        class="nav__link">Company</a>
       <a href="#!"
         v-scroll-to="{ el: '#service', duration: 400 }"
         class="nav__link" >Service</a>
@@ -23,6 +32,27 @@ query {
   }
 }
 </static-query>
+
+<script>
+export default {
+  name: "ComHeader",
+  data () {
+    return {
+      currentLocale: this.$i18n.locale.toString(),
+      availableLocales: this.$i18n.availableLocales
+    }
+  },
+  methods: {
+    changeLocale (locale) {
+      if (this.currentLocale === locale) return
+      this.currentLocale = locale
+      this.$router.push({
+        path: this.$tp(this.$route.path, this.currentLocale, true)
+      })
+    }
+  }
+}
+</script>
 
 <style>
 .header {
