@@ -9,6 +9,7 @@
   "dependencies": {
     "buefy": "^0.9.5",
     "gridsome": "^0.7.0",
+    "gridsome-plugin-i18n": "^1.6.0",
     "vue-scrollto": "^2.20.0"
   }
 }

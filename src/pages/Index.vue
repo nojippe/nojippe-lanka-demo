@@ -5,9 +5,7 @@
     <section id="company" class="section">
       <div class="content">
         <h1 class="">Company</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-        </p>
+        <p v-html="$t('top.company.description')" />
       </div>
     </section>
     <section id="service" class="section">
@@ -18,9 +16,7 @@
             <g-image class="column" alt="Example image" src="~/assets/image/service.jpg" style="width:100%;"/>
           </div>
           <div class="column">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-            </p>
+            <p v-html="$t('top.service.description')" />
           </div>
         </div>
       </div>
@@ -37,7 +33,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Shibata Lanka'
   }
 }
 </script>
