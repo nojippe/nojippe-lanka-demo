@@ -28,7 +28,9 @@
         <h1>Contact</h1>
         <div class="columns is-vcentered">
           <div class="column">
-            <google-map/>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9782281213834!2d79.85956871382959!3d6.89320739501904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bda2080232b%3A0x5c3175ec8326911b!2s112%20Havelock%20Rd%2C%20Colombo%2000500!5e0!3m2!1sja!2slk!4v1617943003088!5m2!1sja!2slk"
+              width="100%" height="300" style="border:0;height:15rem;padding:0.75rem;" allowfullscreen="" loading="lazy"></iframe>
+            <!-- <google-map/> -->
           </div>
           <div class="column">
             <p>address: No.112, Havelock Road, Colombo 04  Sri Lanka</p>
