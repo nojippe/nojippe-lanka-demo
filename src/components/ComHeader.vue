@@ -1,27 +1,41 @@
 <template>
-  <header class="header">
-    <strong>
-      <g-link :to="$tp('/')">{{ $static.metadata.siteName }}</g-link>
-    </strong>
-    <nav class="nav">
-      <a v-for="locale in availableLocales"
-        :key="locale"
-        href="#!"
-        class="nav__link"
-        @click.prevent="changeLocale(locale)">
-        {{ locale.substr(0, 2) }}
-      </a>
+  <header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <g-link :to="$tp('/')" class="navbar-item">{{ $static.metadata.siteName }}</g-link>
+        <a v-for="locale in availableLocales"
+          :key="locale"
+          href="#!"
+          class="navbar-item"
+          @click.prevent="changeLocale(locale)">
+          {{ locale.substr(0, 2) }}
+        </a>
+        <a role="button"
+          :class="['navbar-burger', { 'is-active': visibledBurger }]"
+          aria-label="menu"
+          aria-expanded="false"
+          @click="visibledBurger = !visibledBurger"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div :class="['navbar-menu', { 'is-active': visibledBurger }]">
+        <div class="navbar-start">
+          <a v-scroll-to="{ el: '#company', duration: 400 }"
+            href="#!" class="navbar-item">
+            Company
+          </a>
+          <a v-scroll-to="{ el: '#service', duration: 400 }"
+            href="#!" class="navbar-item" >
+            Service
+          </a>
+        </div>
+      </div>
     </nav>
-    <nav class="nav">
-      <a href="#!"
-        v-scroll-to="{ el: '#company', duration: 400 }"
-        class="nav__link">Company</a>
-      <a href="#!"
-        v-scroll-to="{ el: '#service', duration: 400 }"
-        class="nav__link" >Service</a>
-      <!-- <g-link class="nav__link" to="/">Home</g-link>
-      <g-link class="nav__link" to="/about/">About</g-link> -->
-    </nav>
+    <!-- <g-link class="nav__link" to="/">Home</g-link>
+    <g-link class="nav__link" to="/about/">About</g-link> -->
   </header>
 </template>
 
@@ -39,7 +53,8 @@ export default {
   data () {
     return {
       currentLocale: this.$i18n.locale.toString(),
-      availableLocales: this.$i18n.availableLocales
+      availableLocales: this.$i18n.availableLocales,
+      visibledBurger: false
     }
   },
   methods: {
@@ -55,7 +70,7 @@ export default {
 </script>
 
 <style>
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,5 +80,5 @@ export default {
 
 .nav__link {
   margin-left: 20px;
-}
+} */
 </style>
