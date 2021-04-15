@@ -1,10 +1,49 @@
 {
   "top": {
-    "company": {
-      "description": "It was the middle of winter, and the snow-flakes were falling like feathers from the sky, and a queen sat at her window working, and her embroidery-frame was of ebony. "
+    "aboutUs": {
+      "description": "",
+      "message": {
+        "title": "Message from Managing Director",
+        "img": "service.jpg",
+        "description": "<p>Sri Lanka is located at the geopolitical center of South Asia and is providing crucial point of contact for the 1.6 billion people of South Asia, a quarter of the world's population.  In addition to India, Bangladesh, and Pakistan, Sri Lanka is playing an important hub between Asia and the Middle East / Africa.</p><p>At the same time, Sri Lanka has a rich natural environment in terms of weather and topography, which generates diverse agricultural products, marine resources and mineral resources.  Sri Lanka is also an attractive tourist destination.  Business potential of Sri Lank is immeasurably huge.</p><p>Having been fortunate enough to be in Sri Lanka, we are exploring our business activities in trade, renewable energy, investment, consulting services, etc.</p><p>We are committed to satisfying our customers as well as contributing to the socio-economic development of Sri Lanka and South Asia and to the improvement of people's living standards and happiness, with a spirit of altruism.<p>"
+      },
+      "aboutUs": {
+        "title": "About Us",
+        "img": "service.jpg",
+        "description": "<p>Shibata Lanka (Pvt) Ltd is a Sri Lankan subsidiary of Shibata Corporation Co., Ltd, a Japanese company engaged in infrastructure construction, real estate and environmental businesses such as solar and renewable energy generation in Japan.</p><p class='red'>Yasumitsu Kida, the Managing Director of Shbata Lanka (Pvt) Ltd, has a total of 10 years of experience working in Cambodia, Vietnam, Iraq and India as a diplomat and international cooperation expert.</p><p>Our Japanese Managing Director, who stations at Sri Lanka, provides fine service and communication with Sri Lankan suppliers at ways & levels of Japanese business.</p>"
+      },
+      "access": {
+        "title": "Access",
+        "description": ""
+      }
     },
     "service": {
-      "description": "And as she worked, gazing at times out on the snow, she pricked her finger, and there fell from it three drops of blood on the snow. "
+      "content": [
+        {
+          "id": 1,
+          "title": "Export of Ceylon Spices",
+          "img": "service-01.jpg",
+          "description": "<p>“Ceylon” Spice, products of Sri Lanka, is known as the World Best Quality.</p><p>We have a close tie-up with the top spice exports suppliers in Sri Lanka, and our expatriate Japanese staff are on site to ensure quality control and communication with the supplier at the Japanese level.</p>"
+        },
+        {
+          "id": 2,
+          "title": "Export of Ceylon Products",
+          "img": "service.jpg",
+          "description": "<p>Sri Lanka has a wide variety of agricultural products and resources.</p><p>Our expatriate Japanese staff are on site to ensure quality control and communication with the suppliers at the Japanese level.</p>"
+        },
+        {
+          "id": 3,
+          "title": "Reusable Energy",
+          "img": "service.jpg",
+          "description": "<p>Sri Lanka is actively developing reusable energy including solar power generation, hydropower generation and others.</p><p>Please let us know your inquiries us relating information such as their tender.</p>"
+        },
+        {
+          "id": 4,
+          "title": "Business Consulting",
+          "img": "service.jpg",
+          "description": "<p>Please let us know your inquiries for businesses in Sri Lanka, South Asia & Southeast Asian countries.</p><p>We are utilizing experience in developing countries as a Japanese Diplomat & International Cooperation Expert, as well as our group network of partner companies in Vietnam, Singapore, Malaysia, Philippine and other countries.</p>"
+        }
+      ]
     }
   }
 }

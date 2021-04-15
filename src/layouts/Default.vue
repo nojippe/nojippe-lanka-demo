@@ -1,8 +1,10 @@
 <template>
-  <div class="layout">
+  <div>
     <comHeader/>
-    <slot/>
-    <comFooter/>
+    <div class="layout">
+      <slot/>
+    </div>
+  <comFooter/>
   </div>
 </template>
 
@@ -16,9 +18,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-/* .layout {
-  padding: 0 1rem;
-} */
-</style>
