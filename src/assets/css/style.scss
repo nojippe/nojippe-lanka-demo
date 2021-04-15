@@ -1,0 +1,106 @@
+// Import Bulma's core
+// @import "~bulma/sass/utilities/_all";
+
+// Set font-family
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Helvetica Neue", "Arial", "Hiragino Kaku Gothic Pro", "Hiragino Sans", "Yu Gothic Medium", Meiryo, sans-serif;
+// Set your colors
+$gold: #907910;
+$my-light-yellow: hsl(52, 33%, 95%);
+// $background: #F7F6EF;
+// $background: hsl(52, 33%, 95%);
+
+$primary: $gold;
+$link: $gold;
+// $scheme-main: $my-light-yellow;
+// $navbar-height: 3rem;
+// $navbar-item-img-max-height: 2.75rem;
+// $footer-background-color: $gold;
+// $max-width: 1120px;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+// body {
+//   background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+//   background-image: linear-gradient(to left, #dfe9f3 0%, white 100%);
+//   background-image: linear-gradient(to left, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
+// }
+
+footer.footer {
+  background-image: linear-gradient(to bottom, #fcf9ec, #e1d8b5, #c6b880, #ab984c, #907910);
+  // background-image: linear-gradient(to right bottom, #fcf9ec, #e8e0c3, #d3c89a, #bfb073, #ab984c, #ab984c, #ab984c, #ab984c, #bfb073, #d3c89a, #e8e0c3, #fcf9ec);
+}
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  h2 {
+    color: $gold;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 3rem;
+  }
+  h3 {
+    text-align: center;
+  }
+}
+h2 {
+  position: relative;
+  margin: 0 auto;
+}
+h2 {
+  @include desktop {
+    max-width: 50%;
+  };
+}
+
+h2::before {
+  position: absolute;
+  content: '';
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px $gold;
+}
+h2::after {
+  position: absolute;
+  content: '';
+  bottom: -10px;
+  left: 10px;
+  width: 100%;
+  border-bottom: solid 3px $gold;
+}
+#banner img {
+  @include tablet {
+    height: calc(100vh - 3.25rem);
+  };
+}
+
+.button_arrow span {
+  display: block;
+  position: relative;
+  padding-right: 2rem;
+}
+.button_arrow span::before {
+  position:absolute;
+  content: '';
+  top: 1rem;
+  right: 0;
+  width: 1.5rem;
+  height: 0.12rem;
+  background: #fff;
+}
+.button_arrow span::after {
+  position:absolute;
+  content: '';
+  top: 0.68rem;
+  right: 0.15rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-top: 0.15rem solid #fff;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

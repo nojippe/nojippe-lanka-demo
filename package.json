@@ -11,5 +11,9 @@
     "gridsome": "^0.7.0",
     "gridsome-plugin-i18n": "^1.6.0",
     "vue-scrollto": "^2.20.0"
+  },
+  "devDependencies": {
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1"
   }
 }

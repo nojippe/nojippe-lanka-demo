@@ -1,16 +1,16 @@
 <template>
   <header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <g-link :to="$tp('/')" class="navbar-item">{{ $static.metadata.siteName }}</g-link>
-        <a v-for="locale in availableLocales"
-          :key="locale"
-          href="#!"
-          class="navbar-item"
-          @click.prevent="changeLocale(locale)">
-          {{ locale.substr(0, 2) }}
-        </a>
-        <a role="button"
+    <b-navbar>
+      <template #brand>
+        <b-navbar-item tag="g-link" :to="{ path: $tp('/') }" class="logo">
+          <!-- <g-image
+            src="~/assets/image/logo_transparent_trim.png"
+            :alt="$static.metadata.siteName"/> -->
+          <img
+            :src="require('@/assets/image/lanka-logo.png')"
+            :alt="$static.metadata.siteName"/>
+        </b-navbar-item>
+        <!-- <a role="button"
           :class="['navbar-burger', { 'is-active': visibledBurger }]"
           aria-label="menu"
           aria-expanded="false"
@@ -19,23 +19,45 @@
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div :class="['navbar-menu', { 'is-active': visibledBurger }]">
-        <div class="navbar-start">
-          <a v-scroll-to="{ el: '#company', duration: 400 }"
-            href="#!" class="navbar-item">
-            Company
-          </a>
-          <a v-scroll-to="{ el: '#service', duration: 400 }"
-            href="#!" class="navbar-item" >
-            Service
-          </a>
-        </div>
-      </div>
-    </nav>
-    <!-- <g-link class="nav__link" to="/">Home</g-link>
-    <g-link class="nav__link" to="/about/">About</g-link> -->
+        </a> -->
+      </template>
+      <template #start>
+        <b-navbar-item v-scroll-to="{ el: '#about-us', duration: 400 }" href="#!">
+          ABOUT US
+        </b-navbar-item>
+        <b-navbar-dropdown label="SERVICE">
+          <b-navbar-item href="#">
+            Export of Ceylon Spices
+          </b-navbar-item>
+          <b-navbar-item href="#">
+            Export of Ceylon Products
+          </b-navbar-item>
+          <b-navbar-item href="#">
+            Renewable Energy
+          </b-navbar-item>
+          <b-navbar-item href="#">
+            Business Consulting
+          </b-navbar-item>
+        </b-navbar-dropdown>
+        <b-navbar-item href="#" target="_blank">
+          Daily Sri Lankan Business News(Japanese)
+        </b-navbar-item>
+        <b-navbar-item v-scroll-to="{ el: '#contact', duration: 400 }" href="#!">
+          CONTACT
+        </b-navbar-item>
+      </template>
+      <template #end>
+        <b-navbar-dropdown label="LANGUAGE" :hoverable="true">
+          <b-navbar-item v-for="locale in availableLocales"
+            :key="locale"
+            href="#!"
+            class="is-mobile"
+            @click.prevent="changeLocale(locale)">
+            {{ locale.substr(0, 2) }}
+          </b-navbar-item>
+        </b-navbar-dropdown>
+      </template>
+    </b-navbar>
   </header>
 </template>
 
@@ -53,8 +75,7 @@ export default {
   data () {
     return {
       currentLocale: this.$i18n.locale.toString(),
-      availableLocales: this.$i18n.availableLocales,
-      visibledBurger: false
+      availableLocales: this.$i18n.availableLocales
     }
   },
   methods: {
@@ -70,15 +91,13 @@ export default {
 </script>
 
 <style>
-/* .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
+header {
+  display: block;
 }
-
-.nav__link {
-  margin-left: 20px;
+/* .logo {
+  width: 10rem;
 } */
+header .logo img {
+  max-height: 2.25rem;
+}
 </style>

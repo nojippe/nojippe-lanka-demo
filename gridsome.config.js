@@ -6,6 +6,12 @@
 
 module.exports = {
   siteName: 'Shibata Lanka',
+  siteUrl: 'https://nervous-shannon-4c89f1.netlify.app/',
+  siteDescription: 'スリランカでのビジネス',
+  titleTemplate: '%s | Shibata Lanka',
+  // metadata: {
+  //   siteOgImage: `ogp.png`,
+  // },
   plugins: [
     {
       use: "gridsome-plugin-i18n",
@@ -28,5 +34,7 @@ module.exports = {
         }
       }
     }
-  ]
-}
+  ],
+  chainWebpack: config => {
+    config.resolve.alias.set('@image', '@/assets/image')
+  },}

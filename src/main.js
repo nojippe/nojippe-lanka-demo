@@ -3,8 +3,9 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import Buefy from 'buefy'
 import VueScrollto from 'vue-scrollto'
-import 'buefy/dist/buefy.min.css'
-import '~/assets/css/style.css'
+// import 'buefy/dist/buefy.min.css'
+// import '~/assets/css/style.css'
+import '~/assets/css/style.scss'
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
