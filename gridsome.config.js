@@ -7,7 +7,7 @@
 module.exports = {
   siteName: 'Shibata Lanka',
   siteUrl: 'https://nervous-shannon-4c89f1.netlify.app/',
-  siteDescription: 'スリランカでのビジネス',
+  siteDescription: 'Business for People of Sri Lanka & South Asia',
   titleTemplate: '%s | Shibata Lanka',
   // metadata: {
   //   siteOgImage: `ogp.png`,

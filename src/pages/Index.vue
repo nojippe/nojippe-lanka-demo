@@ -4,44 +4,58 @@
     <section id="banner">
       <ClientOnly>
         <b-carousel>
-          <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-            <!-- <g-image :src="require(`!!assets-loader!@image/${carousel.img}`)"/> -->
-            <img :src="require(`@/assets/image/${carousel.img}`)"/>
+          <b-carousel-item v-for="(carousel, idx) in carousels" :key="idx">
+            <g-image :src="require(`!!assets-loader!@image/${carousel.img}`)" :alt="`carousel-${idx}`" />
+            <!-- <img :src="require(`@/assets/image/${carousel.img}`)"/> -->
           </b-carousel-item>
         </b-carousel>
       </ClientOnly>
+      <h1 class="is-overlay">Business for People <br>of Sri Lanka &amp; South Asia</h1>
     </section>
     <section id="about-us" class="section">
       <div class="content">
         <h2>ABOUT US</h2>
         <h3>{{ $t('top.aboutUs.message.title') }}</h3>
-        <div class="columns is-vcentered">
+        <div class="columns">
           <div class="column is-two-fifths">
-            <g-image class="column" alt="Example image" src="~/assets/image/service.jpg"/>
+            <g-image  class="is-shadow"
+              :src="require(`!!assets-loader!@image/${$t('top.aboutUs.message.img')}`)"
+              :alt="$t('top.aboutUs.message.title')"/>
           </div>
           <div class="column">
             <p v-html="$t('top.aboutUs.message.description')"></p>
           </div>
+          <!-- <div class="column is-half is-overlay" style="top:50px;right:0;left:auto;z-index:-1;">
+            <g-image 
+              :src="require(`!!assets-loader!@image/${$t('top.aboutUs.message.img')}`)"
+              class="column"
+              :alt="$t('top.aboutUs.message.title')"/>
+          </div>
+          <div class="column is-two-thirds" style="padding: 2rem;padding-right:10rem;background-color:rgba(144 , 121 , 16,0.5);">
+            <p v-html="$t('top.aboutUs.message.description')"></p>
+          </div> -->
         </div>
         <h3>{{ $t('top.aboutUs.aboutUs.title') }}</h3>
-        <div class="columns is-vcentered">
+        <div class="columns">
           <div class="column is-two-fifths">
-            <g-image class="column" alt="Example image" src="~/assets/image/service.jpg"/>
+            <g-image class="is-shadow"
+              :src="require(`!!assets-loader!@image/${$t('top.aboutUs.aboutUs.img')}`)"
+              :alt="$t('top.aboutUs.aboutUs.title')"/>
           </div>
           <div class="column">
             <p v-html="$t('top.aboutUs.aboutUs.description')"></p>
           </div>
         </div>
         <h3>{{ $t('top.aboutUs.access.title') }}</h3>
-        <div class="columns is-vcentered">
+        <div class="columns">
           <div class="column">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9782281213834!2d79.85956871382959!3d6.89320739501904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bda2080232b%3A0x5c3175ec8326911b!2s112%20Havelock%20Rd%2C%20Colombo%2000500!5e0!3m2!1sja!2slk!4v1617943003088!5m2!1sja!2slk"
+            <iframe name="access-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9782281213834!2d79.85956871382959!3d6.89320739501904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bda2080232b%3A0x5c3175ec8326911b!2s112%20Havelock%20Rd%2C%20Colombo%2000500!5e0!3m2!1sja!2slk!4v1617943003088!5m2!1sja!2slk"
               width="100%" height="300" style="border:0;height:15rem;padding:0.75rem;" allowfullscreen="" loading="lazy"></iframe>
             <!-- <google-map/> -->
           </div>
           <div class="column">
-            <p>address: No.112, Havelock Road, Colombo 04  Sri Lanka</p>
-            <p>tel: +94-11-3456789</p>
+            <b-tag type="is-primary" rounded>Office</b-tag>
+            <p>{{ CampanyProfile.ADDRESS }}</p>
             <p v-if="$t('top.aboutUs.access.description')" v-html="$t('top.aboutUs.access.description')"></p>
           </div>
         </div>
@@ -52,10 +66,10 @@
         <h2>SERVICE</h2>
         <template v-for="content in $t('top.service.content')">
           <h3 :key="`title_${content.id}`">{{ content.title }}</h3>
-          <div :key="`content_${content.id}`" class="columns is-vcentered">
+          <div :key="`content_${content.id}`" class="columns">
             <div class="column is-two-fifths">
               <div class="frame">
-                <g-image alt="Example image" :src="require(`!!assets-loader!@image/${content.img}`)"/>
+                <g-image :alt="content.title" :src="require(`!!assets-loader!@image/${content.img}`)" class="is-shadow"/>
                 <!-- <g-image class="column" alt="Example image" src="~/assets/image/service.jpg" width="640" height="424"/> -->
                 <!-- <g-image :src="require(`!!assets-loader!@image/${carousel.img}`)"/> -->
               </div>
@@ -73,15 +87,12 @@
     <section id="contact" class="section">
       <div class="content">
         <h2>Contact</h2>
-        <div class="columns is-vcentered">
+        <div class="columns">
           <div class="column">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9782281213834!2d79.85956871382959!3d6.89320739501904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bda2080232b%3A0x5c3175ec8326911b!2s112%20Havelock%20Rd%2C%20Colombo%2000500!5e0!3m2!1sja!2slk!4v1617943003088!5m2!1sja!2slk"
-              width="100%" height="300" style="border:0;height:15rem;padding:0.75rem;" allowfullscreen="" loading="lazy"></iframe>
-            <!-- <google-map/> -->
+            Please contact us from here
           </div>
-          <div class="column">
-            <p>address: No.112, Havelock Road, Colombo 04  Sri Lanka</p>
-            <p>tel: +94-11-3456789</p>
+          <div class="column is-half">
+            <b-button size="is-primary is-large" outlined expanded>Contact</b-button>
           </div>
         </div>
       </div>
@@ -94,6 +105,8 @@
 </template>
 
 <script>
+import { CAMPANY_PROFILE } from "@/assets/const"
+
 export default {
   components: {
     // CarouselはNetlifyでサーバーサイドレンダリングできないためその対策
@@ -111,6 +124,7 @@ export default {
   },
   data () {
     return {
+      CampanyProfile: CAMPANY_PROFILE,
       isClient: process.isClient,
       carousels: [
           { img: 'carousel/carousel-flag.jpg', text: 'Slide 1', color: 'info' },
@@ -135,12 +149,24 @@ export default {
   /* height: calc(100vh - 3.25rem); */
   object-fit: cover;
 }
+#about-us .columns:nth-child(4n + 1) {
+  flex-direction: row-reverse;
+}
+
 #service .columns:nth-child(4n + 1) {
   flex-direction: row-reverse;
 }
 #service .columns .more {
   text-align: right;
 }
+/* .wrapper {
+   position:relative;
+   background: url('~@/assets/image/carousel/carousel-dawn.jpg')center center;
+   background-color:rgba(247 , 237,190, 0.5);
+   background-blend-mode:lighten;
+   background-size:cover;
+   padding: 5rem;
+} */
 /* #service .column .frame {
 	display: inline-block;
   position: relative;

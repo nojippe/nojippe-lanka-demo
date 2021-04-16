@@ -39,7 +39,7 @@
             Business Consulting
           </b-navbar-item>
         </b-navbar-dropdown>
-        <b-navbar-item href="#" target="_blank">
+        <b-navbar-item :href="CampanyProfile.BLOG_URL" target="_blank">
           Daily Sri Lankan Business News(Japanese)
         </b-navbar-item>
         <b-navbar-item v-scroll-to="{ el: '#contact', duration: 400 }" href="#!">
@@ -70,10 +70,13 @@ query {
 </static-query>
 
 <script>
+import { CAMPANY_PROFILE } from "@/assets/const"
+
 export default {
   name: "ComHeader",
   data () {
     return {
+      CampanyProfile: CAMPANY_PROFILE,
       currentLocale: this.$i18n.locale.toString(),
       availableLocales: this.$i18n.availableLocales
     }
