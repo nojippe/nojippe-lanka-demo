@@ -9,8 +9,11 @@ $my-light-yellow: hsl(52, 33%, 95%);
 // $background: #F7F6EF;
 // $background: hsl(52, 33%, 95%);
 
+$gold-light: bulmaLighten($gold, 10%);
+
 $primary: $gold;
 $link: $gold;
+$scheme-main: hsl(0, 0%, 96%);
 // $scheme-main: $my-light-yellow;
 // $navbar-height: 3rem;
 // $navbar-item-img-max-height: 2.75rem;
@@ -20,6 +23,8 @@ $link: $gold;
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
+
+$scheme-main: $gold;
 
 // body {
 //   background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
@@ -35,48 +40,83 @@ footer.footer {
   max-width: 1120px;
   margin: 0 auto;
   h2 {
+    position: relative;
+    margin: 0 auto 4rem;
     color: $gold;
-    text-align: center;
     font-size: 2em;
-    margin-bottom: 3rem;
+    text-align: center;
+    @include desktop {
+      max-width: 50%;
+    };
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: -10px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: none;
+      border-left: solid 15px transparent;
+      border-bottom: solid 15px $gold;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: -10px;
+      left: 10px;
+      width: 100%;
+      border-bottom: solid 3px $gold;
+    }
   }
   h3 {
     text-align: center;
+    margin-bottom: 2rem;
+  }
+  img.is-shadow {
+    box-shadow: 2px 2px 2px 2px lightgray;
   }
 }
-h2 {
-  position: relative;
-  margin: 0 auto;
-}
-h2 {
-  @include desktop {
-    max-width: 50%;
-  };
-}
+// h2 {
+//   @include desktop {
+//     max-width: 50%;
+//   };
+// }
 
-h2::before {
-  position: absolute;
-  content: '';
-  bottom: -10px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border: none;
-  border-left: solid 15px transparent;
-  border-bottom: solid 15px $gold;
-}
-h2::after {
-  position: absolute;
-  content: '';
-  bottom: -10px;
-  left: 10px;
-  width: 100%;
-  border-bottom: solid 3px $gold;
-}
+// h2::before {
+//   position: absolute;
+//   content: '';
+//   bottom: -10px;
+//   left: 0;
+//   width: 0;
+//   height: 0;
+//   border: none;
+//   border-left: solid 15px transparent;
+//   border-bottom: solid 15px $gold;
+// }
+// h2::after {
+//   position: absolute;
+//   content: '';
+//   bottom: -10px;
+//   left: 10px;
+//   width: 100%;
+//   border-bottom: solid 3px $gold;
+// }
+
 #banner img {
+  height: 50vh;
   @include tablet {
     height: calc(100vh - 3.25rem);
   };
+}
+#banner h1 {
+  top: 40%;
+  left: 10%;
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #fff;
+  z-index: 1;
+  text-shadow: 0px 0px 5px rgb(0 0 0 / 50%), 0px 0px 10px rgb(0 0 0 / 50%), 0px 0px 5px rgb(0 0 0 / 50%);
 }
 
 .button_arrow span {
