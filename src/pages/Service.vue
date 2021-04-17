@@ -35,6 +35,19 @@ export default {
       CampanyProfile: CAMPANY_PROFILE,
       isClient: process.isClient,
     }
+  },
+  mounted () {
+    if (this.$route.hash) {
+      this.scrollToHash()
+    }
+  },
+  methods: {
+    scrollToHash () {
+      const hash = this.$route.hash
+      this.$nextTick(() => {
+        this.$scrollTo(hash, 400, { offset: 0 })
+      })
+    }
   }
 }
 </script>
