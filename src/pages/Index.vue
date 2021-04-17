@@ -14,39 +14,39 @@
     </section>
     <section id="about-us" class="section">
       <div class="content">
-        <h2>ABOUT US</h2>
-        <h3>{{ $t('top.aboutUs.message.title') }}</h3>
-        <div class="columns">
+        <h2><span>ABOUT US</span></h2>
+        <h3>{{ $t('aboutUs.message.title') }}</h3>
+        <div class="columns is-vcentered">
           <div class="column is-two-fifths">
             <g-image  class="is-shadow"
-              :src="require(`!!assets-loader!@image/${$t('top.aboutUs.message.img')}`)"
-              :alt="$t('top.aboutUs.message.title')"/>
+              :src="require(`!!assets-loader!@image/${$t('aboutUs.message.img')}`)"
+              :alt="$t('aboutUs.message.title')"/>
           </div>
           <div class="column">
-            <p v-html="$t('top.aboutUs.message.description')"></p>
+            <article v-html="$t('aboutUs.message.description')"></article>
           </div>
           <!-- <div class="column is-half is-overlay" style="top:50px;right:0;left:auto;z-index:-1;">
             <g-image 
-              :src="require(`!!assets-loader!@image/${$t('top.aboutUs.message.img')}`)"
+              :src="require(`!!assets-loader!@image/${$t('aboutUs.message.img')}`)"
               class="column"
-              :alt="$t('top.aboutUs.message.title')"/>
+              :alt="$t('aboutUs.message.title')"/>
           </div>
           <div class="column is-two-thirds" style="padding: 2rem;padding-right:10rem;background-color:rgba(144 , 121 , 16,0.5);">
-            <p v-html="$t('top.aboutUs.message.description')"></p>
+            <p v-html="$t('aboutUs.message.description')"></p>
           </div> -->
         </div>
-        <h3>{{ $t('top.aboutUs.aboutUs.title') }}</h3>
-        <div class="columns">
+        <h3>{{ $t('aboutUs.aboutUs.title') }}</h3>
+        <div class="columns  is-vcentered">
           <div class="column is-two-fifths">
             <g-image class="is-shadow"
-              :src="require(`!!assets-loader!@image/${$t('top.aboutUs.aboutUs.img')}`)"
-              :alt="$t('top.aboutUs.aboutUs.title')"/>
+              :src="require(`!!assets-loader!@image/${$t('aboutUs.aboutUs.img')}`)"
+              :alt="$t('aboutUs.aboutUs.title')"/>
           </div>
           <div class="column">
-            <p v-html="$t('top.aboutUs.aboutUs.description')"></p>
+            <article v-html="$t('aboutUs.aboutUs.description')"></article>
           </div>
         </div>
-        <h3>{{ $t('top.aboutUs.access.title') }}</h3>
+        <h3>{{ $t('aboutUs.access.title') }}</h3>
         <div class="columns">
           <div class="column">
             <iframe name="access-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9782281213834!2d79.85956871382959!3d6.89320739501904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bda2080232b%3A0x5c3175ec8326911b!2s112%20Havelock%20Rd%2C%20Colombo%2000500!5e0!3m2!1sja!2slk!4v1617943003088!5m2!1sja!2slk"
@@ -56,15 +56,15 @@
           <div class="column">
             <b-tag type="is-primary" rounded>Office</b-tag>
             <p>{{ CampanyProfile.ADDRESS }}</p>
-            <p v-if="$t('top.aboutUs.access.description')" v-html="$t('top.aboutUs.access.description')"></p>
+            <p v-if="$t('aboutUs.access.description')" v-html="$t('aboutUs.access.description')"></p>
           </div>
         </div>
       </div>
     </section>
     <section id="service" class="section">
       <div class="content">
-        <h2>SERVICE</h2>
-        <template v-for="content in $t('top.service.content')">
+        <h2><span>SERVICE</span></h2>
+        <template v-for="content in $t('service.content')">
           <h3 :key="`title_${content.id}`">{{ content.title }}</h3>
           <div :key="`content_${content.id}`" class="columns">
             <div class="column is-two-fifths">
@@ -75,9 +75,11 @@
               </div>
             </div>
             <div class="column">
-              <p v-html="content.description"></p>
+              <article v-html="content.description"></article>
               <div class="more">
-                <b-button type="is-primary" class="button_arrow">More</b-button>
+                <g-link :to="$tp(`/service/#${content.code}`)">
+                  <b-button type="is-primary" class="button_arrow">More</b-button>
+                </g-link>
               </div>
             </div>
           </div>
@@ -86,7 +88,7 @@
     </section>
     <section id="contact" class="section">
       <div class="content">
-        <h2>Contact</h2>
+        <h2><span>Contact</span></h2>
         <div class="columns">
           <div class="column">
             Please contact us from here
@@ -143,6 +145,7 @@ export default {
 #banner {
   max-width: 1580px;
   margin: 0 auto;
+  position: relative;
 }
 #banner img {
   width: 100%;
@@ -158,6 +161,7 @@ export default {
 }
 #service .columns .more {
   text-align: right;
+  padding-right: 1rem;
 }
 /* .wrapper {
    position:relative;

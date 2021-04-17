@@ -25,17 +25,17 @@
         <b-navbar-item v-scroll-to="{ el: '#about-us', duration: 400 }" href="#!">
           ABOUT US
         </b-navbar-item>
-        <b-navbar-dropdown label="SERVICE">
-          <b-navbar-item href="#">
+        <b-navbar-dropdown label="SERVICE" :hoverable="true">
+          <b-navbar-item :href="$tp('/service/#spices')">
             Export of Ceylon Spices
           </b-navbar-item>
-          <b-navbar-item href="#">
+          <b-navbar-item :href="$tp('/service/#products')">
             Export of Ceylon Products
           </b-navbar-item>
-          <b-navbar-item href="#">
+          <b-navbar-item :href="$tp('/service/#energy')">
             Renewable Energy
           </b-navbar-item>
-          <b-navbar-item href="#">
+          <b-navbar-item :href="$tp('/service/#consulting')">
             Business Consulting
           </b-navbar-item>
         </b-navbar-dropdown>
