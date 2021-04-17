@@ -94,7 +94,9 @@
             Please contact us from here
           </div>
           <div class="column is-half">
-            <b-button size="is-primary is-large" outlined expanded>Contact</b-button>
+            <g-link :to="{ path: $tp('/contact/') }">
+              <b-button size="is-primary is-large" outlined expanded>Contact</b-button>
+            </g-link>
           </div>
         </div>
       </div>
@@ -136,6 +138,19 @@ export default {
           { img: 'carousel/carousel-dawn.jpg', text: 'Slide 2', color: 'info' },
           { img: 'carousel/carousel-children.jpg', text: 'Slide 2', color: 'info' }
       ]
+    }
+  },
+  mounted () {
+    if (this.$route.hash) {
+      this.scrollToHash()
+    }
+  },
+  methods: {
+    scrollToHash () {
+      const hash = this.$route.hash
+      this.$nextTick(() => {
+        this.$scrollTo(hash, 400, { offset: 0 })
+      })
     }
   }
 }

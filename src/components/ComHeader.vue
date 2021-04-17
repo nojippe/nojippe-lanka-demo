@@ -22,11 +22,17 @@
         </a> -->
       </template>
       <template #start>
-        <b-navbar-item v-scroll-to="{ el: '#about-us', duration: 400 }" href="#!">
+        <b-navbar-item v-if="isTop" v-scroll-to="{ el: '#about-us', duration: 400 }" href="#!">
+          ABOUT US
+        </b-navbar-item>
+        <b-navbar-item v-else tag="g-link" v-scroll-to="'#about-us'" :to="{ path: $tp('/#about-us') }">
           ABOUT US
         </b-navbar-item>
         <b-navbar-dropdown label="SERVICE" :hoverable="true">
-          <b-navbar-item :href="$tp('/service/#spices')">
+          <!-- <b-navbar-item tag="g-link" :to="{ path: $tp('/service/') }">
+            Top
+          </b-navbar-item> -->
+           <b-navbar-item :href="$tp('/service/#spices')">
             Export of Ceylon Spices
           </b-navbar-item>
           <b-navbar-item :href="$tp('/service/#products')">
@@ -42,18 +48,18 @@
         <b-navbar-item :href="CampanyProfile.BLOG_URL" target="_blank">
           Daily Sri Lankan Business News(Japanese)
         </b-navbar-item>
-        <b-navbar-item v-scroll-to="{ el: '#contact', duration: 400 }" href="#!">
+        <b-navbar-item tag="g-link" :to="{ path: $tp('/contact/') }">
           CONTACT
         </b-navbar-item>
       </template>
       <template #end>
         <b-navbar-dropdown label="LANGUAGE" :hoverable="true">
-          <b-navbar-item v-for="locale in availableLocales"
+          <b-navbar-item v-for="locale in availableLocalesShort"
             :key="locale"
             href="#!"
             class="is-mobile"
             @click.prevent="changeLocale(locale)">
-            {{ locale.substr(0, 2) }}
+            {{ locale }}
           </b-navbar-item>
         </b-navbar-dropdown>
       </template>
@@ -78,7 +84,13 @@ export default {
     return {
       CampanyProfile: CAMPANY_PROFILE,
       currentLocale: this.$i18n.locale.toString(),
-      availableLocales: this.$i18n.availableLocales
+      availableLocales: this.$i18n.availableLocales,
+      availableLocalesShort: this.$i18n.availableLocales.map(elm => elm.substr(0, 2))
+    }
+  },
+  computed: {
+    isTop () {
+      return this.availableLocalesShort.map(elm => `/${elm}/`).indexOf(this.$route.path) !== -1
     }
   },
   methods: {
