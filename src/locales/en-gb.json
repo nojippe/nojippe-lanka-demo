@@ -1,49 +1,161 @@
 {
-  "top": {
-    "aboutUs": {
-      "description": "",
-      "message": {
-        "title": "Message from Managing Director",
-        "img": "about-us-01.jpg",
-        "description": "<p>Sri Lanka is located at the geopolitical center of South Asia and is providing crucial point of contact for the 1.6 billion people of South Asia, a quarter of the world's population.  In addition to India, Bangladesh, and Pakistan, Sri Lanka is playing an important hub between Asia and the Middle East / Africa.</p><p>At the same time, Sri Lanka has a rich natural environment in terms of weather and topography, which generates diverse agricultural products, marine resources and mineral resources.  Sri Lanka is also an attractive tourist destination.  Business potential of Sri Lank is immeasurably huge.</p><p>Having been fortunate enough to be in Sri Lanka, we are exploring our business activities in trade, renewable energy, investment, consulting services, etc.</p><p>We are committed to satisfying our customers as well as contributing to the socio-economic development of Sri Lanka and South Asia and to the improvement of people's living standards and happiness, with a spirit of altruism.<p>"
-      },
-      "aboutUs": {
-        "title": "About Us",
-        "img": "about-us-01.jpg",
-        "description": "<p>Shibata Lanka (Pvt) Ltd is a Sri Lankan subsidiary of Shibata Corporation Co., Ltd, a Japanese company engaged in infrastructure construction, real estate and environmental businesses such as solar and renewable energy generation in Japan.</p><p class='red'>Yasumitsu Kida, the Managing Director of Shbata Lanka (Pvt) Ltd, has a total of 10 years of experience working in Cambodia, Vietnam, Iraq and India as a diplomat and international cooperation expert.</p><p>Our Japanese Managing Director, who stations at Sri Lanka, provides fine service and communication with Sri Lankan suppliers at ways & levels of Japanese business.</p>"
-      },
-      "access": {
-        "title": "Access",
-        "description": ""
-      }
+  "aboutUs": {
+    "description": "",
+    "message": {
+      "title": "Message from Managing Director",
+      "img": "about-us-01.jpg",
+      "description": "<p>Sri Lanka is located at the geopolitical center of South Asia and is providing crucial point of contact for the 1.6 billion people of South Asia, a quarter of the world's population.  In addition to India, Bangladesh, and Pakistan, Sri Lanka is playing an important hub between Asia and the Middle East / Africa.</p><p>At the same time, Sri Lanka has a rich natural environment in terms of weather and topography, which generates diverse agricultural products, marine resources and mineral resources.  Sri Lanka is also an attractive tourist destination.  Business potential of Sri Lank is immeasurably huge.</p><p>Having been fortunate enough to be in Sri Lanka, we are exploring our business activities in trade, renewable energy, investment, consulting services, etc.</p><p>We are committed to satisfying our customers as well as contributing to the socio-economic development of Sri Lanka and South Asia and to the improvement of people's living standards and happiness, with a spirit of altruism.<p>"
     },
-    "service": {
-      "content": [
-        {
-          "id": 1,
-          "title": "Export of Ceylon Spices",
-          "img": "service-01.jpg",
-          "description": "<p>“Ceylon” Spice, products of Sri Lanka, is known as the World Best Quality.</p><p>We have a close tie-up with the top spice exports suppliers in Sri Lanka, and our expatriate Japanese staff are on site to ensure quality control and communication with the supplier at the Japanese level.</p>"
-        },
-        {
-          "id": 2,
-          "title": "Export of Ceylon Products",
-          "img": "service.jpg",
-          "description": "<p>Sri Lanka has a wide variety of agricultural products and resources.</p><p>Our expatriate Japanese staff are on site to ensure quality control and communication with the suppliers at the Japanese level.</p>"
-        },
-        {
-          "id": 3,
-          "title": "Reusable Energy",
-          "img": "service.jpg",
-          "description": "<p>Sri Lanka is actively developing reusable energy including solar power generation, hydropower generation and others.</p><p>Please let us know your inquiries us relating information such as their tender.</p>"
-        },
-        {
-          "id": 4,
-          "title": "Business Consulting",
-          "img": "service.jpg",
-          "description": "<p>Please let us know your inquiries for businesses in Sri Lanka, South Asia & Southeast Asian countries.</p><p>We are utilizing experience in developing countries as a Japanese Diplomat & International Cooperation Expert, as well as our group network of partner companies in Vietnam, Singapore, Malaysia, Philippine and other countries.</p>"
-        }
-      ]
+    "aboutUs": {
+      "title": "About Us",
+      "img": "about-us-01.jpg",
+      "description": "<p>Shibata Lanka (Pvt) Ltd is a Sri Lankan subsidiary of Shibata Corporation Co., Ltd, a Japanese company engaged in infrastructure construction, real estate and environmental businesses such as solar and renewable energy generation in Japan.</p><p class='red'>Yasumitsu Kida, the Managing Director of Shbata Lanka (Pvt) Ltd, has a total of 10 years of experience working in Cambodia, Vietnam, Iraq and India as a diplomat and international cooperation expert.</p><p>Our Japanese Managing Director, who stations at Sri Lanka, provides fine service and communication with Sri Lankan suppliers at ways & levels of Japanese business.</p>"
+    },
+    "access": {
+      "title": "Access",
+      "description": ""
     }
+  },
+  "service": {
+    "content": [
+      {
+        "id": 1,
+        "code": "spices",
+        "title": "Export of Ceylon Spices",
+        "img": "service-01.jpg",
+        "description": "<p>“Ceylon” Spice, products of Sri Lanka, is known as the World Best Quality.</p><p>We have a close tie-up with the top spice exports suppliers in Sri Lanka, and our expatriate Japanese staff are on site to ensure quality control and communication with the supplier at the Japanese level.</p>",
+        "items": [
+          {
+            "id": 1,
+            "img": "service-01-cinamon.jpg",
+            "name": "“Ceylon” Cinnamon",
+            "description": "<p>“Ceylon” Cinnamon is totally different from “Cassia” of other countries.</p><p>We offer “Ceylon” Cinnamon as the world's only and highest quality & pride of Sri Lanka.</p>"
+          },
+          {
+            "id": 2,
+            "img": "service-01-pepper.jpg",
+            "name": "“Ceylon” Pepper",
+            "description": "<p>We offer “Ceylon” Pepper with rich & sharp flavor.</p>"
+          },
+          {
+            "id": 3,
+            "img": "service-01-nutmeg.jpg",
+            "name": "“Ceylon” Nutmeg",
+            "description": "<p>We offer high-quality “Ceylon” Nutmeg.</p>"
+          },
+          {
+            "id": 4,
+            "img": "service-01-mace.jpg",
+            "name": "“Ceylon” Mace",
+            "description": "<p>We offer high-quality “Ceylon” Mace.</p>"
+          },
+          {
+            "id": 5,
+            "img": "service-01-clove.jpg",
+            "name": "“Ceylon” Clove",
+            "description": "<p>We offer high-quality “Ceylon” Clove.</p>"
+          },
+          {
+            "id": 6,
+            "img": "service-01-oil.jpg",
+            "name": "“Ceylon” Essential Oil",
+            "description": "<p>We offer high-quality “Ceylon” Essential Oil extracted from “Ceylon” Spices.</p>"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "code": "products",
+        "title": "Export of Ceylon Products",
+        "img": "service-02.jpg",
+        "description": "<p>Sri Lanka has a wide variety of agricultural products and resources.</p><p>Our expatriate Japanese staff are on site to ensure quality control and communication with the suppliers at the Japanese level.</p>",
+        "items": [
+          {
+            "id": 1,
+            "img": "service-02-tea.jpg",
+            "name": "“Ceylon” Tea",
+            "description": "<p>“Ceylon” Tea is recognized as top quality tea of the world.</p><p>We offer “Ceylon” tea products, including the most traditional tea manufacturers in Sri Lanka.</p>"
+          },
+          {
+            "id": 2,
+            "img": "service-02-coffee.jpg",
+            "name": "“Ceylon” Coffee",
+            "description": "<p>Sri Lanka was one of the world's leading coffee-producing countries until the 18th century.</p><p>We offer revived “Ceylon” coffee.</p>"
+          },
+          {
+            "id": 3,
+            "img": "service-02-mineral.jpg",
+            "name": "“Ceylon” Mineral Resources",
+            "description": "<p>Sri Lanka is said to produce all mineral resources except gold.</p><p>It is confirmed to have deposits of Quartz, Graphite, Ilmenite, Rutile, Zircon, Garnet, etc.</p>"
+          },
+          {
+            "id": 4,
+            "img": "service-02-gem.jpg",
+            "name": "“Ceylon” Gem & Jewelry",
+            "description": "<p>Sri Lanka is said to produce all gems except diamond.</p><p>We offer high-quality gems & jewelries including famous sapphires & rubies.</p>"
+          },
+          {
+            "id": 5,
+            "img": "service-02-other.jpg",
+            "name": "Other “Ceylon” agricultural & fishery products, marine resources and others",
+            "description": "<p>Please feel free to consult agricultural products (like vanilla beans, cocoa, coconuts & kithur related materials), fishery products and marine resources.</p>"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "code": "energy",
+        "title": "Reusable Energy",
+        "img": "service-03.jpg",
+        "description": "<p>Sri Lanka is actively developing reusable energy including solar power generation, hydropower generation and others.</p><p>Please let us know your inquiries us relating information such as their tender.</p>",
+        "items": [
+          {
+            "id": 1,
+            "img": "service-03-solar.jpg",
+            "name": "Solar Power Generation / Investment",
+            "description": ""
+          },
+          {
+            "id": 2,
+            "img": "service-03-hydro.jpg",
+            "name": "Hydropower Generation / Investment",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "code": "consulting",
+        "title": "Business Consulting",
+        "img": "service-04.jpg",
+        "description": "<p>Please let us know your inquiries for businesses in Sri Lanka, South Asia & Southeast Asian countries.</p><p>We are utilizing experience in developing countries as a Japanese Diplomat & International Cooperation Expert, as well as our group network of partner companies in Vietnam, Singapore, Malaysia, Philippine and other countries.</p>",
+        "items": [
+          {
+            "id": 1,
+            "img": "service-04-consulting.jpg",
+            "name": "Consulting Service for Business Activities in Sri Lanka & other countries",
+            "description": ""
+          },
+          {
+            "id": 2,
+            "img": "service-04-investment.jpg",
+            "name": "Investment Opportunities in Sri Lanka & other countries",
+            "description": ""
+          },
+          {
+            "id": 3,
+            "img": "service-04-information.jpg",
+            "name": "Business Information Collection in Sri Lanka & other countries",
+            "description": ""
+          },
+          {
+            "id": 4,
+            "img": "service-04-news.jpg",
+            "name": "Daily Sri Lankan Business News",
+            "description": ""
+          }
+        ]
+      }
+    ]
   }
 }
