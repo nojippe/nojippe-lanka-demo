@@ -14,6 +14,11 @@ $gold-light: bulmaLighten($gold, 10%);
 $primary: $gold;
 $link: $gold;
 $scheme-main: hsl(0, 0%, 96%);
+// $navbar-background-color: hsl(0, 0%, 88%);
+$navbar-background-color: rgba(224,224,224,0.9);
+
+$footer-padding: 2rem 1.5rem 3rem;
+
 // $scheme-main: $my-light-yellow;
 // $navbar-height: 3rem;
 // $navbar-item-img-max-height: 2.75rem;
@@ -21,7 +26,7 @@ $scheme-main: hsl(0, 0%, 96%);
 // $max-width: 1120px;
 
 $section-padding: 3rem 0;
-$content-padding: 0.75rem;
+$my-content-padding: 0.75rem;
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
@@ -52,9 +57,9 @@ footer.footer {
   // article {
   //   padding: 0.75rem;
   // }
-  p {
-    padding: 0 $content-padding;
-  }
+  // p {
+  //   padding: 0 $my-content-padding;
+  // }
   h1 {
     // text-align: center;
     padding: 1rem;
@@ -72,8 +77,8 @@ footer.footer {
     // text-shadow: 0 -1px #fff,0 -2px #fff, 0 8px 15px rgba(0,0,0,0.7);
   }
   h2 {
-    padding-left: $content-padding;
-    padding-right: $content-padding;
+    padding-left: $my-content-padding;
+    padding-right: $my-content-padding;
     margin: 0 auto 4rem;
     font-size: 2em;
     & span {
@@ -108,8 +113,8 @@ footer.footer {
     }
   }
   h3 {
-    padding-left: $content-padding;
-    padding-right: $content-padding;
+    padding-left: $my-content-padding;
+    padding-right: $my-content-padding;
     // text-align: center;
     margin: 2rem 0;
   }
@@ -119,8 +124,14 @@ footer.footer {
     };
   }
   // .column.article {
-  //   padding-top: 0 $content-padding;
+  //   padding-top: 0 $my-content-padding;
   // }
+  .column.is-mobile-padding {
+    padding: $my-content-padding * 2;
+    @include tablet {
+      padding: $my-content-padding;
+    };
+  }
  .column img{
     display: block;
     margin: 0 auto;

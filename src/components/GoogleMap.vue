@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { CAMPANY_PROFILE } from "@/assets/const"
+import { COMPANY_PROFILE } from "@/assets/const"
 
 export default {
   name: "GoogleMap",
@@ -13,7 +13,7 @@ export default {
     latLng: {
       type: Object,
       require : false,
-      default: () => ({ lat: CAMPANY_PROFILE.LAT_LNG.LAT, lng: CAMPANY_PROFILE.LAT_LNG.LNG })
+      default: () => ({ lat: COMPANY_PROFILE.LAT_LNG.LAT, lng: COMPANY_PROFILE.LAT_LNG.LNG })
     }
   },
   data() {
@@ -25,7 +25,7 @@ export default {
     if (!window.mapLoadStarted) {
       window.mapLoadStarted = true
       let script = document.createElement('script')
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCF4cOEyztvw54puLcRQGc-UMus3cQfacI&callback=initMap'
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=apiKey&callback=initMap'
       script.async = true
       document.head.appendChild(script)
     }

@@ -5,12 +5,19 @@
         <h1>SERVICE</h1>
         <section v-for="content in $t('service.content')" :key="content.id" :id="content.code" class="section">
           <h2><span>{{ content.title }}</span></h2>
-          <article v-html="content.description"></article>
+          <article class="px-3" v-html="content.description"></article>
           <div v-for="item in content.items" :key="item.id" class="service-items">
             <div class="columns is-vcentered">
-              <div class="column article">
+              <div class="column is-mobile-padding">
                 <h3>{{ item.name }}</h3>
-                <article v-html="item.description"></article>
+                <article v-if="item.description" v-html="item.description"></article>
+                <a v-if="content.id===4 && item.id===4"
+                  :href="companyProfile.BLOG_URL"
+                  target="_blank"
+                  class="read-button"
+                >
+                  <b-button type="is-primary" class="button_arrow">{{ item.buttonCaption }}</b-button>
+                </a>
               </div>
               <div class="column is-two-fifths">
                 <g-image :alt="item.title" :src="require(`!!assets-loader!@image/${item.img}`)" class="is-shadow"/>
@@ -24,7 +31,7 @@
 </template>
 
 <script>
-import { CAMPANY_PROFILE } from "@/assets/const"
+import { COMPANY_PROFILE } from "@/assets/const"
 
 export default {
   metaInfo: {
@@ -32,7 +39,7 @@ export default {
   },
   data () {
     return {
-      CampanyProfile: CAMPANY_PROFILE,
+      companyProfile: COMPANY_PROFILE,
       isClient: process.isClient,
     }
   },
@@ -61,5 +68,9 @@ export default {
 }
 .service-items {
   margin-top: 2rem;
+}
+.read-button {
+  display: block;
+  text-align: right;
 }
 </style>

@@ -3,7 +3,7 @@
     <section id="contact" class="section">
       <div class="content">
         <h1>CONTACT</h1>
-        <div class="container">
+        <div class="container has-text-centered">
           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSefTDC6Qk7ffL9SzWOyLivXrPQVNbHVQzTKcui8DZS75cJLvA/viewform?embedded=true" width="640" height="950" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
       </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { CAMPANY_PROFILE } from "@/assets/const"
+import { COMPANY_PROFILE } from "@/assets/const"
 
 export default {
   metaInfo: {
@@ -20,7 +20,7 @@ export default {
   },
   data () {
     return {
-      CampanyProfile: CAMPANY_PROFILE,
+      companyProfile: COMPANY_PROFILE,
       isClient: process.isClient,
     }
   },
@@ -44,7 +44,7 @@ export default {
 iframe[src^="https://docs.google.com/forms/d/e"]{
   width:100%;
 }
-#contact .container {
+/* #contact .container {
   text-align: center;
-}
+} */
 </style>
