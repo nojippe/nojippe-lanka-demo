@@ -18,22 +18,13 @@
         <h3>{{ $t('aboutUs.message.title') }}</h3>
         <div class="columns is-vcentered">
           <div class="column is-two-fifths">
-            <g-image  class="is-shadow"
+            <g-image class="is-shadow"
               :src="require(`!!assets-loader!@image/${$t('aboutUs.message.img')}`)"
               :alt="$t('aboutUs.message.title')"/>
           </div>
-          <div class="column">
+          <div class="column is-mobile-padding">
             <article v-html="$t('aboutUs.message.description')"></article>
           </div>
-          <!-- <div class="column is-half is-overlay" style="top:50px;right:0;left:auto;z-index:-1;">
-            <g-image 
-              :src="require(`!!assets-loader!@image/${$t('aboutUs.message.img')}`)"
-              class="column"
-              :alt="$t('aboutUs.message.title')"/>
-          </div>
-          <div class="column is-two-thirds" style="padding: 2rem;padding-right:10rem;background-color:rgba(144 , 121 , 16,0.5);">
-            <p v-html="$t('aboutUs.message.description')"></p>
-          </div> -->
         </div>
         <h3>{{ $t('aboutUs.aboutUs.title') }}</h3>
         <div class="columns  is-vcentered">
@@ -42,7 +33,7 @@
               :src="require(`!!assets-loader!@image/${$t('aboutUs.aboutUs.img')}`)"
               :alt="$t('aboutUs.aboutUs.title')"/>
           </div>
-          <div class="column">
+          <div class="column is-mobile-padding">
             <article v-html="$t('aboutUs.aboutUs.description')"></article>
           </div>
         </div>
@@ -53,9 +44,9 @@
               width="100%" height="300" style="border:0;height:15rem;padding:0.75rem;" allowfullscreen="" loading="lazy"></iframe>
             <!-- <google-map/> -->
           </div>
-          <div class="column">
-            <b-tag type="is-primary" rounded>Office</b-tag>
-            <p>{{ CampanyProfile.ADDRESS }}</p>
+          <div class="column  is-mobile-padding">
+            <b-tag type="is-primary" rounded>Operating Office</b-tag>
+            <p>{{ companyProfile.ADDRESS }}</p>
             <p v-if="$t('aboutUs.access.description')" v-html="$t('aboutUs.access.description')"></p>
           </div>
         </div>
@@ -74,7 +65,7 @@
                 <!-- <g-image :src="require(`!!assets-loader!@image/${carousel.img}`)"/> -->
               </div>
             </div>
-            <div class="column">
+            <div class="column is-mobile-padding">
               <article v-html="content.description"></article>
               <div class="more">
                 <g-link :to="$tp(`/service/#${content.code}`)">
@@ -90,10 +81,10 @@
       <div class="content">
         <h2><span>Contact</span></h2>
         <div class="columns">
-          <div class="column">
+          <div class="column is-mobile-padding">
             Please contact us from here
           </div>
-          <div class="column is-half">
+          <div class="column is-half is-mobile-padding">
             <g-link :to="{ path: $tp('/contact/') }">
               <b-button size="is-primary is-large" outlined expanded>Contact</b-button>
             </g-link>
@@ -109,7 +100,7 @@
 </template>
 
 <script>
-import { CAMPANY_PROFILE } from "@/assets/const"
+import { COMPANY_PROFILE } from "@/assets/const"
 
 export default {
   components: {
@@ -128,7 +119,7 @@ export default {
   },
   data () {
     return {
-      CampanyProfile: CAMPANY_PROFILE,
+      companyProfile: COMPANY_PROFILE,
       isClient: process.isClient,
       carousels: [
           { img: 'carousel/carousel-flag.jpg', text: 'Slide 1', color: 'info' },
@@ -175,6 +166,7 @@ export default {
   flex-direction: row-reverse;
 }
 #service .columns .more {
+  margin-top: 1rem;
   text-align: right;
   padding-right: 1rem;
 }

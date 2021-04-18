@@ -1,6 +1,6 @@
 <template>
   <header>
-    <b-navbar>
+    <b-navbar :fixed-top="true">
       <template #brand>
         <b-navbar-item tag="g-link" :to="{ path: $tp('/') }" class="logo">
           <!-- <g-image
@@ -23,43 +23,43 @@
       </template>
       <template #start>
         <b-navbar-item v-if="isTop" v-scroll-to="{ el: '#about-us', duration: 400 }" href="#!">
-          ABOUT US
+          {{ $t('menu.aboutUs.main') }}
         </b-navbar-item>
         <b-navbar-item v-else tag="g-link" v-scroll-to="'#about-us'" :to="{ path: $tp('/#about-us') }">
-          ABOUT US
+          {{ $t('menu.aboutUs.main') }}
         </b-navbar-item>
-        <b-navbar-dropdown label="SERVICE" :hoverable="true">
+        <b-navbar-dropdown :label="$t('menu.service.main')" :hoverable="true">
           <!-- <b-navbar-item tag="g-link" :to="{ path: $tp('/service/') }">
             Top
           </b-navbar-item> -->
            <b-navbar-item :href="$tp('/service/#spices')">
-            Export of Ceylon Spices
+            {{ $t('menu.service.items.0') }}
           </b-navbar-item>
           <b-navbar-item :href="$tp('/service/#products')">
-            Export of Ceylon Products
+            {{ $t('menu.service.items.1') }}
           </b-navbar-item>
           <b-navbar-item :href="$tp('/service/#energy')">
-            Renewable Energy
+            {{ $t('menu.service.items.2') }}
           </b-navbar-item>
           <b-navbar-item :href="$tp('/service/#consulting')">
-            Business Consulting
+            {{ $t('menu.service.items.3') }}
           </b-navbar-item>
         </b-navbar-dropdown>
-        <b-navbar-item :href="CampanyProfile.BLOG_URL" target="_blank">
-          Daily Sri Lankan Business News(Japanese)
+        <b-navbar-item :href="companyProfile.BLOG_URL" target="_blank">
+          {{ $t('menu.news.main') }}
         </b-navbar-item>
         <b-navbar-item tag="g-link" :to="{ path: $tp('/contact/') }">
-          CONTACT
+          {{ $t('menu.contact.main') }}
         </b-navbar-item>
       </template>
       <template #end>
-        <b-navbar-dropdown label="LANGUAGE" :hoverable="true">
-          <b-navbar-item v-for="locale in availableLocalesShort"
+        <b-navbar-dropdown :label="$t('menu.language.main')" :hoverable="true">
+          <b-navbar-item v-for="(locale, idx) in availableLocales"
             :key="locale"
             href="#!"
             class="is-mobile"
             @click.prevent="changeLocale(locale)">
-            {{ locale }}
+            {{ $t(`menu.language.items.${idx}`) }}
           </b-navbar-item>
         </b-navbar-dropdown>
       </template>
@@ -76,13 +76,13 @@ query {
 </static-query>
 
 <script>
-import { CAMPANY_PROFILE } from "@/assets/const"
+import { COMPANY_PROFILE } from "@/assets/const"
 
 export default {
   name: "ComHeader",
   data () {
     return {
-      CampanyProfile: CAMPANY_PROFILE,
+      companyProfile: COMPANY_PROFILE,
       currentLocale: this.$i18n.locale.toString(),
       availableLocales: this.$i18n.availableLocales,
       availableLocalesShort: this.$i18n.availableLocales.map(elm => elm.substr(0, 2))
