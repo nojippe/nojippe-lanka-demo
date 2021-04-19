@@ -6,7 +6,7 @@
 
 module.exports = {
   siteName: 'Shibata Lanka',
-  siteUrl: 'https://nervous-shannon-4c89f1.netlify.app/',
+  siteUrl: 'https://nervous-shannon-4c89f1.netlify.app',
   siteDescription: 'Business for People of Sri Lanka & South Asia',
   titleTemplate: '%s | Shibata Lanka',
   // metadata: {
@@ -17,20 +17,20 @@ module.exports = {
       use: "gridsome-plugin-i18n",
       options: {
         locales: [ // locales list
-          'ja-jp',
-          'en-gb'
+          'ja-JP',
+          'en-US'
         ],
         pathAliases: { // path segment alias for each locales
-          'ja-jp': 'ja',
-          'en-gb': 'en'
+          'ja-JP': 'ja',
+          'en-US': 'en'
         },
-        fallbackLocale: 'en-gb', // fallback language
-        defaultLocale: 'en-gb', // default language
+        fallbackLocale: 'en-US', // fallback language
+        defaultLocale: 'en-US', // default language
         enablePathRewrite: true, // rewrite path with locale prefix, default: true
         rewriteDefaultLanguage: true, // rewrite default locale, default: true
         messages: {
-          'ja-jp': require('./src/locales/ja-jp.json'), // Messages files
-          'en-gb': require('./src/locales/en-gb.json')
+          'ja-JP': require('./src/locales/ja-jp.json'), // Messages files
+          'en-US': require('./src/locales/en-us.json')
         }
       }
     }

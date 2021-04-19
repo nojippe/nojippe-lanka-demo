@@ -99,10 +99,19 @@
   </Layout>
 </template>
 
+<static-query>
+query {
+  metadata {
+    siteUrl
+  }
+}
+</static-query>
+
 <script>
 import { COMPANY_PROFILE } from "@/assets/const"
 
 export default {
+  name: "Index",
   components: {
     // CarouselはNetlifyでサーバーサイドレンダリングできないためその対策
     BCarousel: () =>
@@ -114,8 +123,27 @@ export default {
       .then(m => m.BCarouselItem)
       .catch()
   },
-  metaInfo: {
-    title: 'Shibata Lanka'
+  metaInfo() {
+    return {
+      title: 'Shibata Lanka',
+      link: [
+        {
+          key: 'alternate',
+          rel: 'alternate',
+          hreflang: 'en-US',
+          href: `${this.$static.metadata.siteUrl}/en/`
+        },
+        {
+          key: 'alternate',
+          rel: 'alternate',
+          hreflang: 'ja-JP',
+          href: `${this.$static.metadata.siteUrl}/ja/`
+        }
+      ],
+      meta: [
+        { key: `http-equiv`, 'http-equiv': `content-language`, content: `${this.$i18n.locale}` }
+      ]
+    }
   },
   data () {
     return {

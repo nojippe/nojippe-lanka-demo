@@ -11,12 +11,40 @@
   </Layout>
 </template>
 
+<static-query>
+query {
+  metadata {
+    siteUrl
+  }
+}
+</static-query>
+
 <script>
 import { COMPANY_PROFILE } from "@/assets/const"
 
 export default {
-  metaInfo: {
-    title: 'Contact'
+  name: "Contact",
+  metaInfo() {
+    return {
+      title: 'Contact',
+      link: [
+        {
+          key: 'alternate',
+          rel: 'alternate',
+          hreflang: 'en-US',
+          href: `${this.$static.metadata.siteUrl}/en/contact/`
+        },
+        {
+          key: 'alternate',
+          rel: 'alternate',
+          hreflang: 'ja-JP',
+          href: `${this.$static.metadata.siteUrl}/ja/contact/`
+        }
+      ],
+      meta: [
+        { key: `http-equiv`, 'http-equiv': 'content-language', content: `${this.$i18n.locale}` }
+      ]
+    }
   },
   data () {
     return {
