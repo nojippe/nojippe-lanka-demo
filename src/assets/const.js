@@ -9,6 +9,7 @@ export const COMPANY_PROFILE = {
     LAT: 6.88403,
     LNG: 79.86798
   },
+  GA_MEASUREMENT_ID: 'G-0R0LWX3RWP',
   BLOG_URL: 'https://www.yasumitsukida.com',
   FACEBOOK_URL: 'https://www.facebook.com/Shibata-Lanka-Pvt-Ltd%E3%82%B7%E3%83%90%E3%82%BF%E3%83%A9%E3%83%B3%E3%82%AB-356379185174218'
 }
